@@ -19,6 +19,7 @@ stages:
     outs:
       - outputs/X.npy
       - outputs/y.npy
+      - outputs/model.pkl
 
   inference:
     cmd: python src/inference.py
