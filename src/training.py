@@ -3,6 +3,7 @@ from modulo import aula3_modulo_mlops as sts
 import numpy as np
 import matplotlib.pyplot as plt
 import mlflow
+import mlflow.sklearn
 import joblib
 from matplotlib.colors import TwoSlopeNorm
 
@@ -17,6 +18,16 @@ joblib.dump(ET, 'outputs/model.pkl')
 
 np.save('outputs/X.npy', X)
 np.save('outputs/y.npy', y)
+
+# Exportando os resultados do treinamento
+with mlflow.start_run(run_name='training'):
+    mlflow.log_params(dict_params)
+    mlflow.log_metric('nrms_teste', nrms_teste)
+    mlflow.log_metric('r2', r2_teste)
+    mlflow.log_metric('mape', mape_teste)
+    mlflow.sklearn.log_model(ET, 'model')
+
+    print("Modelo treinado e salvo com sucesso no MLflow.")
 
 print("Modelo treinado e salvo com sucesso.")
 

@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Users/Igorn/Desktop/mlops_project/mlruns/0/fad6474abc144851b5e080834898bbb2/artifacts
+end_time: 1748884214170
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fad6474abc144851b5e080834898bbb2
+run_name: inference
+run_uuid: fad6474abc144851b5e080834898bbb2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748884214096
+status: 3
+tags: []
+user_id: Igorn
