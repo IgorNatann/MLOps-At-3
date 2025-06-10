@@ -50,8 +50,8 @@ stages:
       size: 52616
     - path: outputs/model.pkl
       hash: md5
-      md5: 181bb1ba1fd659d433303343447a5bf6
-      size: 21474529
+      md5: c2d7c3ea2a36239631580187358c3cba
+      size: 21499873
     - path: outputs/y.npy
       hash: md5
       md5: d6c61a3e4819d8475fe3743553bc0ef1
@@ -65,8 +65,8 @@ stages:
       size: 9314720
     - path: outputs/model.pkl
       hash: md5
-      md5: 181bb1ba1fd659d433303343447a5bf6
-      size: 21474529
+      md5: c2d7c3ea2a36239631580187358c3cba
+      size: 21499873
     - path: src/inference.py
       hash: md5
       md5: 28cf7bf8a3e9edee05d626fbaa7d841f
@@ -74,7 +74,7 @@ stages:
     outs:
     - path: outputs/seis_estimated.npy
       hash: md5
-      md5: c010e18fa2045dd4d1ea2aa25ad80680
+      md5: f0082332b911e557c9705ca5480533ef
       size: 9314720
   evaluation:
     cmd: python src/evaluation.py
@@ -97,8 +97,8 @@ stages:
       size: 1299
     - path: src/modulo/aula3_modulo_mlops.py
       hash: md5
-      md5: 5183f2ba2c8e0a36a7ddd8f7877c5d2d
-      size: 11218
+      md5: ba17e606c084cafedaf9e90adcd1d54e
+      size: 11499
     outs:
     - path: outputs/residuos.npy
       hash: md5

@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Users/Igorn/Desktop/mlops_project/mlruns/0/f28d3f5e909d423ab8bd40bc029c3054/artifacts
+end_time: 1749581316907
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f28d3f5e909d423ab8bd40bc029c3054
+run_name: training
+run_uuid: f28d3f5e909d423ab8bd40bc029c3054
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749581309059
+status: 3
+tags: []
+user_id: Igorn

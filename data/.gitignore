@@ -1,3 +1,7 @@
 /sim_slice.npy
 /seismic_slice.npy
 /seismic_slice_GT.npy
+/sim_clean.npy
+/sim_clean_GT.npy
+/seismic_slice_clean.npy
+/seismic_slice_GT_clean.npy
