@@ -19,6 +19,9 @@ joblib.dump(ET, 'outputs/model.pkl')
 np.save('outputs/X.npy', X)
 np.save('outputs/y.npy', y)
 
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+mlflow.set_experiment("MLops_ExtraTrees_Aula04_Final")   
+
 # Exportando os resultados do treinamento
 with mlflow.start_run(run_name='training'):
     mlflow.log_params(dict_params)

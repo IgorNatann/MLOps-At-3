@@ -41,8 +41,8 @@ stages:
       size: 70112
     - path: src/training.py
       hash: md5
-      md5: 947066a3d0a4a05d4a2f90c986a89296
-      size: 1069
+      md5: cf554ef4401e420543aec0fe99dca6d8
+      size: 1180
     outs:
     - path: outputs/X.npy
       hash: md5
@@ -50,8 +50,8 @@ stages:
       size: 52616
     - path: outputs/model.pkl
       hash: md5
-      md5: c2d7c3ea2a36239631580187358c3cba
-      size: 21499873
+      md5: 7692c2eff5d32a59040cdc65a57f9d66
+      size: 21743953
     - path: outputs/y.npy
       hash: md5
       md5: d6c61a3e4819d8475fe3743553bc0ef1
@@ -65,16 +65,16 @@ stages:
       size: 9314720
     - path: outputs/model.pkl
       hash: md5
-      md5: c2d7c3ea2a36239631580187358c3cba
-      size: 21499873
+      md5: 7692c2eff5d32a59040cdc65a57f9d66
+      size: 21743953
     - path: src/inference.py
       hash: md5
-      md5: 28cf7bf8a3e9edee05d626fbaa7d841f
-      size: 1143
+      md5: ac07f017890209b3a3876f3ec5675628
+      size: 1254
     outs:
     - path: outputs/seis_estimated.npy
       hash: md5
-      md5: f0082332b911e557c9705ca5480533ef
+      md5: 0ca2fde19ef593a8afa0fd4d5679e222
       size: 9314720
   evaluation:
     cmd: python src/evaluation.py

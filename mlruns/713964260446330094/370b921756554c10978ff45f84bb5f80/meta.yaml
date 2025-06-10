@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/713964260446330094/370b921756554c10978ff45f84bb5f80/artifacts
+end_time: 1749585121734
+entry_point_name: ''
+experiment_id: '713964260446330094'
+lifecycle_stage: active
+run_id: 370b921756554c10978ff45f84bb5f80
+run_name: inference
+run_uuid: 370b921756554c10978ff45f84bb5f80
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749585121568
+status: 3
+tags: []
+user_id: Igorn
