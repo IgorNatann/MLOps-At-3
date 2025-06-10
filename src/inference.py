@@ -24,7 +24,7 @@ seis_prop_vector, seis_estimated = sts.transfer_to_seismic_scale(dados_sismicos=
 np.save('outputs/seis_estimated.npy', seis_estimated)
 
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
-mlflow.set_experiment("MLops_ExtraTrees_Aula04_Final")   
+mlflow.set_experiment("MLops_ExtraTrees_Aula04_Final_AutoML")   
 
 # Plotando os resultados da inferência
 with mlflow.start_run(run_name='inference'):

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/977593599429534668/f935949cfb1749db99eea1487df67298/artifacts
+end_time: 1749588846872
+entry_point_name: ''
+experiment_id: '977593599429534668'
+lifecycle_stage: active
+run_id: f935949cfb1749db99eea1487df67298
+run_name: training
+run_uuid: f935949cfb1749db99eea1487df67298
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749588842264
+status: 3
+tags: []
+user_id: Igorn

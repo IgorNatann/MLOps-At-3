@@ -41,8 +41,8 @@ stages:
       size: 70112
     - path: src/training.py
       hash: md5
-      md5: cf554ef4401e420543aec0fe99dca6d8
-      size: 1180
+      md5: 12ae33f7c6dd1d1d12b5f1f41ab90473
+      size: 1181
     outs:
     - path: outputs/X.npy
       hash: md5
@@ -50,8 +50,8 @@ stages:
       size: 52616
     - path: outputs/model.pkl
       hash: md5
-      md5: 7692c2eff5d32a59040cdc65a57f9d66
-      size: 21743953
+      md5: 0930058e606e62707f311c6859a8ddac
+      size: 21588001
     - path: outputs/y.npy
       hash: md5
       md5: d6c61a3e4819d8475fe3743553bc0ef1

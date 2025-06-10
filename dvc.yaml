@@ -21,6 +21,14 @@ stages:
       - outputs/y.npy
       - outputs/model.pkl
 
+  training_automl:
+    cmd: python src/training_automl.py
+    deps:
+      - outputs/sim_clean.npy
+      - src/training_automl.py
+    outs:
+      - outputs/best_model_pycaret.pkl
+
   inference:
     cmd: python src/inference.py
     deps:
