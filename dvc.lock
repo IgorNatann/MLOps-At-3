@@ -50,8 +50,8 @@ stages:
       size: 52616
     - path: outputs/model.pkl
       hash: md5
-      md5: 0930058e606e62707f311c6859a8ddac
-      size: 21588001
+      md5: 5917bd30c197f6221e02aab7079bb61b
+      size: 21623425
     - path: outputs/y.npy
       hash: md5
       md5: d6c61a3e4819d8475fe3743553bc0ef1

@@ -7,27 +7,42 @@ import mlflow
 import mlflow.sklearn
 import joblib
 from matplotlib.colors import TwoSlopeNorm
-from pycaret.regression import *
+from pycaret.regression import setup, compare_models, save_model, get_config
+import os
 
-# Carrega dados de treino
+# === 1. Carregando os dados já limpos ===
 sim_clean = np.load("outputs/sim_clean.npy")
-
-#Converte em DataFrame para usar com PyCaret
 df = pd.DataFrame(sim_clean, columns=["X", "Y", "Z", "Propriedade"])
 
-#Tracking do modelo
+# === 2. Configura o experimento no MLflow ===
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
-mlflow.set_experiment("MLops_ExtraTrees_Aula04_AutoML")   
+mlflow.set_experiment("projeto_aula4_mlops")
 
-#Setup do PyCaret
-s = setup(data=df, target='Propriedade', session_id=123, log_experiment=True, experiment_name='MLops_ExtraTrees_Aula04_Final', log_plots=True)
-print("Modelo treinado e salvo com sucesso.")
+# === 3. Setup e AutoML ===
+with mlflow.start_run(run_name="training_automl"):
+    s = setup(
+        data=df,
+        target="Propriedade",
+        session_id=123,
+        log_experiment=True,
+        experiment_name="projeto_aula4_mlops",
+        log_plots=False,  # Evita tentar abrir gráficos fora do notebook
+        verbose=False,
+        html=False
+    )
 
-# Compara todos os modelos disponíveis
-best_model = compare_models()
+    best_model = compare_models(sort="RMSE")  # Você pode mudar para "MAE", "RMSE" etc
 
-# Exporta o melhor modelo
-save_model(best_model, 'outputs/best_model_pycaret')
+    # === 4. Salva modelo + dados de treino para etapa seguinte ===
+    save_model(best_model, "outputs/best_model_pycaret")
+    
+    # Recupera os dados de treino/teste que PyCaret criou
+    X_train = get_config("X_train")
+    y_train = get_config("y_train")
+    X_test = get_config("X_test")
+    y_test = get_config("y_test")
+    np.save("outputs/X.npy", pd.concat([X_train, X_test]).values)
+    np.save("outputs/y.npy", pd.concat([y_train, y_test]).values)
+    mlflow.sklearn.log_model(best_model, "modelo_pycaret")
 
-print("AutoML com PyCaret salvo com sucesso.")
-# Note: This code is a direct translation of the original training script, which trains an ExtraTrees model on seismic data.
+print("Modelo AutoML salvo com sucesso.")

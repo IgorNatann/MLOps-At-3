@@ -11,16 +11,6 @@ stages:
       - outputs/seismic_slice_clean.npy
       - outputs/seismic_slice_GT_clean.npy
 
-  training:
-    cmd: python src/training.py
-    deps:
-      - outputs/sim_clean.npy
-      - src/training.py
-    outs:
-      - outputs/X.npy
-      - outputs/y.npy
-      - outputs/model.pkl
-
   training_automl:
     cmd: python src/training_automl.py
     deps:
@@ -28,12 +18,14 @@ stages:
       - src/training_automl.py
     outs:
       - outputs/best_model_pycaret.pkl
+      - outputs/X.npy
+      - outputs/y.npy
 
   inference:
     cmd: python src/inference.py
     deps:
-      - outputs/model.pkl
-      - data/seismic_slice.npy
+      - outputs/seismic_slice_clean.npy
+      - outputs/best_model_pycaret.pkl
       - src/inference.py
     outs:
       - outputs/seis_estimated.npy
@@ -41,10 +33,8 @@ stages:
   evaluation:
     cmd: python src/evaluation.py
     deps:
-      - outputs/seis_estimado.npy
-      - outputs/sim_clean.npy
-      - data/seismic_slice_GT.npy
+      - outputs/seis_estimated.npy
+      - outputs/seismic_slice_GT_clean.npy
       - src/evaluation.py
-      - src/modulo/aula3_modulo_mlops.py
     outs:
       - outputs/residuos.npy
