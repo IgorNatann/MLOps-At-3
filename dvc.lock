@@ -59,48 +59,64 @@ stages:
   inference:
     cmd: python src/inference.py
     deps:
-    - path: data/seismic_slice.npy
+    - path: outputs/best_model_pycaret.pkl
       hash: md5
-      md5: b89efbbc51b4003adb9191a9bcde8951
+      md5: e21c59c883eb5cc7520feac9184c9516
+      size: 13042312
+    - path: outputs/seismic_slice_clean.npy
+      hash: md5
+      md5: 5b0fec0bf1887e366641f70ee2331510
       size: 9314720
-    - path: outputs/model.pkl
-      hash: md5
-      md5: 7692c2eff5d32a59040cdc65a57f9d66
-      size: 21743953
     - path: src/inference.py
       hash: md5
-      md5: ac07f017890209b3a3876f3ec5675628
-      size: 1254
+      md5: b7deed14bfe65b836d3be8cd387e9fa4
+      size: 2666
     outs:
     - path: outputs/seis_estimated.npy
       hash: md5
-      md5: 0ca2fde19ef593a8afa0fd4d5679e222
+      md5: f48cf5c45f2918f551e985df996964e9
       size: 9314720
   evaluation:
     cmd: python src/evaluation.py
     deps:
-    - path: data/seismic_slice_GT.npy
+    - path: outputs/seis_estimated.npy
+      hash: md5
+      md5: f48cf5c45f2918f551e985df996964e9
+      size: 9314720
+    - path: outputs/seismic_slice_GT_clean.npy
       hash: md5
       md5: 038bcf2c0c0e0e836e140cbe9350bedd
       size: 9314720
-    - path: outputs/seis_estimado.npy
-      hash: md5
-      md5: 63043348650bd4f42ae9354524bc7ccc
-      size: 9314720
-    - path: outputs/sim_clean.npy
-      hash: md5
-      md5: a1708ba6bf248dbd4990063fd5c9377c
-      size: 70112
     - path: src/evaluation.py
       hash: md5
       md5: 7a434bdb161fb0c15a0282b0dcfadb56
       size: 1299
-    - path: src/modulo/aula3_modulo_mlops.py
-      hash: md5
-      md5: ba17e606c084cafedaf9e90adcd1d54e
-      size: 11499
     outs:
     - path: outputs/residuos.npy
       hash: md5
       md5: 716028e2e22ea89862d19c2802d11de1
       size: 9314720
+  training_automl:
+    cmd: python src/training_automl.py
+    deps:
+    - path: outputs/sim_clean.npy
+      hash: md5
+      md5: a1708ba6bf248dbd4990063fd5c9377c
+      size: 70112
+    - path: src/training_automl.py
+      hash: md5
+      md5: fd6db298e501599c6c83222bc0808721
+      size: 1720
+    outs:
+    - path: outputs/X.npy
+      hash: md5
+      md5: 71f7ce231d973f5b1d1f732fa4e96bd1
+      size: 26372
+    - path: outputs/best_model_pycaret.pkl
+      hash: md5
+      md5: e21c59c883eb5cc7520feac9184c9516
+      size: 13042312
+    - path: outputs/y.npy
+      hash: md5
+      md5: 98d94c1541e89d9657db431e4c80b02a
+      size: 8876

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/853957515026871604/c026921b20884166b68290fd2cf859e9/artifacts
+end_time: 1749661267932
+entry_point_name: ''
+experiment_id: '853957515026871604'
+lifecycle_stage: active
+run_id: c026921b20884166b68290fd2cf859e9
+run_name: Extra Trees Regressor
+run_uuid: c026921b20884166b68290fd2cf859e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749661267729
+status: 3
+tags: []
+user_id: Igor

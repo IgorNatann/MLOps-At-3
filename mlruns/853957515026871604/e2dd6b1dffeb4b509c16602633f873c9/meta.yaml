@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/853957515026871604/e2dd6b1dffeb4b509c16602633f873c9/artifacts
+end_time: 1749661269074
+entry_point_name: ''
+experiment_id: '853957515026871604'
+lifecycle_stage: active
+run_id: e2dd6b1dffeb4b509c16602633f873c9
+run_name: Lasso Least Angle Regression
+run_uuid: e2dd6b1dffeb4b509c16602633f873c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749661268861
+status: 3
+tags: []
+user_id: Igor

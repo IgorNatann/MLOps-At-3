@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/853957515026871604/c3eec9d261434484a6d7d43c2033c878/artifacts
+end_time: 1749661276038
+entry_point_name: ''
+experiment_id: '853957515026871604'
+lifecycle_stage: active
+run_id: c3eec9d261434484a6d7d43c2033c878
+run_name: training_automl
+run_uuid: c3eec9d261434484a6d7d43c2033c878
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749661257841
+status: 3
+tags: []
+user_id: Igor

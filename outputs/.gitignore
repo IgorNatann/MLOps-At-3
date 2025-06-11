@@ -6,3 +6,4 @@
 /sim_clean.npy
 /seismic_slice_clean.npy
 /seismic_slice_GT_clean.npy
+/best_model_pycaret.pkl
